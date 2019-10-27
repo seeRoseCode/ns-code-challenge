@@ -39,8 +39,11 @@ class SearchContainer extends Component{
       <div>
         <h2>Find your Favorite Comic!</h2>
         <h5>(Choose a number 1 - 2219)</h5>
+
         <SearchForm handleSubmit={this.handleSubmit}/>
+
         <br/><br/><br/>
+
         {
           // Accommodation for async. Check that state has been assigned before attempting to render data
         }

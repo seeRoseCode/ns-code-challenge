@@ -8,12 +8,12 @@ import SearchContainer from '../src/components/containers/SearchContainer'
 function App() {
   return (
     <div className="App" style={appStyle}>
-    <NavBar />
-    <Switch>
-      <Route exact path="/" component={HomePage} />
-      <Route exact path="/search" component = {SearchContainer} />
-    </Switch>
-  </div>
+      <NavBar />
+      <Switch>
+        <Route exact path="/" component={HomePage} />
+        <Route exact path="/search" component = {SearchContainer} />
+      </Switch>
+    </div>
   );
 }
 
