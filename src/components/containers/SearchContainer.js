@@ -4,7 +4,7 @@ class SearchContainer extends Component{
   render(){
     return(
       <div>
-        <h1>I'm the search container!</h1>
+        <h2>I'm the search container!</h2>
       </div>
     )
   }
