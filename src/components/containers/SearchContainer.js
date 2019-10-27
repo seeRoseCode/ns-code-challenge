@@ -25,8 +25,12 @@ class SearchContainer extends Component{
 
   //ensures that user input is a number that corresponds to an actual comic
   handleError = (num) => {
+    let n = parseInt(num)
+    if (n === 404)
+      alert("404 NOT FOUND! Please choose another number")
+    else
     return(
-      parseInt(num) !== NaN && num > 0 && num < 2219 ? true : alert("please enter a number 1-2219")
+      parseInt(num) !== NaN && n > 0 && n < 2219 ? true : alert("please enter a number 1-2219")
     )
   }
 
