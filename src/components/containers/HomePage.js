@@ -16,7 +16,6 @@ class HomePage extends Component{
   fetchLatest = () => {
     fetch(latestURL)
     .then(res => res.json())
-    // .then(res => console.log("results: ", res))
     .then(res => this.setState({latest: res}))
   }
 

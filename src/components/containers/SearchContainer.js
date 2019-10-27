@@ -10,12 +10,9 @@ class SearchContainer extends Component{
   //dynamically create the SKCD url using the user's input
   handleSubmit = (e) => {
     e.preventDefault()
-    // debugger
     let searchInput = e.target.children[0].value
-    // console.log("search Input: ", e.target.children[0].value)
     this.handleError(searchInput)
     let XKCDURL = `https://xkcd.now.sh/?comic=${searchInput}`
-    // console.log("complete URL: ", XKCDURL)
     this.fetchComic(XKCDURL)
   }
 
@@ -23,7 +20,6 @@ class SearchContainer extends Component{
   fetchComic = (comicUrl) => {
     fetch(comicUrl)
     .then(res => res.json())
-    // .then(res => console.log("search result: ", res))
     .then(res => this.setState({result: res}))
   }
 
