@@ -7,6 +7,7 @@ class HomePage extends Component{
     latest: []
   }
 
+  //on page load fetch the latest comic
   componentDidMount(){
     this.fetchLatest()
   }
@@ -15,18 +16,22 @@ class HomePage extends Component{
   fetchLatest = () => {
     fetch(latestURL)
     .then(res => res.json())
-    // .then(res => console.log("results: ", res))
     .then(res => this.setState({latest: res}))
   }
 
   render(){
+    let latest = this.state.latest
+    let date = `${latest.month} / ${latest.day} / ${latest.year}`
+
     return(
-        <div>
-          {
-          //Accommodation for async. Check that state has been assigned before attempting to render image
-          this.state.latest ? <img className="latestImage" title={this.state.latest.alt} alt={this.state.latest.title} src={this.state.latest.img}/> : null
-          }
-        </div>
+      <div>
+        {
+        //Accommodation for async. Check that state has been assigned before attempting to render image
+        }
+        {latest ? <h1>{latest.title}</h1> : null}
+        {latest ? <img className="latestImage" title={latest.alt} alt={latest.title} src={latest.img}/> : null}
+        {date.includes("undefined") ? null :  <h3>{date}</h3>}
+      </div>
     )
   }
 
