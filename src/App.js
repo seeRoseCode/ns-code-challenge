@@ -20,8 +20,8 @@ function App() {
 let appStyle = {
   backgroundColor: 'grey',
   color: 'white',
-  width: '100%vh',
-  height: '100vh',
+  width: '100%',
+  height: '100%',
   textAlign: 'center',
   border: "none"
 }
