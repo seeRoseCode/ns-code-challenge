@@ -5,9 +5,9 @@ class NavBar extends Component{
   render(){
     return(
       <div>
-        <nav>
-          <button className="latest" ><a href='/'>Latest</a></button>
-          <button className="search" ><a href='/search'>Search</a></button>
+        <nav style={navStyle}>
+          <button className="latest" ><a href='/' style={buttonStyle}>Latest</a></button>
+          <button className="search" ><a href='/search' style={buttonStyle}>Search</a></button>
         </nav>
       </div>
     )
@@ -15,5 +15,15 @@ class NavBar extends Component{
 
 }
 
+let navStyle = {
+  padding: "20px",
+  border: "lightGrey solid 5px"
+}
+
+let buttonStyle = {
+  fontSize: "14px",
+  padding: "20px"
+
+}
 
 export default NavBar;

@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import SearchForm from '../SearchForm'
 
 class SearchContainer extends Component{
 
@@ -17,24 +18,25 @@ class SearchContainer extends Component{
     this.fetchComic(XKCDURL)
   }
 
-  
+
   fetchComic = (comicUrl) => {
     fetch(comicUrl)
     .then(res => res.json())
     // .then(res => console.log("search result: ", res))
-    .then(res => this.setState({result: res}))
+    .then(res => this.setState({...this.state, result: res}))
   }
 
   render(){
     return(
       <div>
-        <h2>I'm the search container!</h2>
-        <form  onSubmit={this.handleSubmit}>
-          <input className="searchInput" type="text" name="search"/>
-          <input className="searchSubmit" type="submit"/>
-        </form>
+        <h2>Find your Favorite Comic!</h2>
+        <h3>Choose a number 1 - 2219</h3>
+        <SearchForm handleSubmit={this.handleSubmit}/>
+        <br/><br/><br/>
+        {this.state.latest ? <h1>{this.state.result.title}</h1> : null}
         {
-          this.state.result ? <img className="searchImage" title={this.state.result.alt} alt={this.state.result.title} src={this.state.result.img}/> : null
+        // Accommodation for async. Check that state has been assigned before attempting to render image
+        this.state.result ? <img className="searchImage" title={this.state.result.alt} alt={this.state.result.title} src={this.state.result.img}/> : null
         }
       </div>
     )

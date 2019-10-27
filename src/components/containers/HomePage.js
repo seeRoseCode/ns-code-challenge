@@ -22,6 +22,7 @@ class HomePage extends Component{
   render(){
     return(
         <div>
+        {this.state.latest ? <h1>{this.state.latest.title}</h1> : null}
           {
           //Accommodation for async. Check that state has been assigned before attempting to render image
           this.state.latest ? <img className="latestImage" title={this.state.latest.alt} alt={this.state.latest.title} src={this.state.latest.img}/> : null

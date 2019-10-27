@@ -5,10 +5,9 @@ import HomePage from '../src/components/containers/HomePage'
 import SearchContainer from '../src/components/containers/SearchContainer'
 
 
-
 function App() {
   return (
-    <div className="App">
+    <div className="App" style={appStyle}>
     <NavBar />
     <Switch>
       <Route exact path="/" component={HomePage} />
@@ -17,5 +16,15 @@ function App() {
   </div>
   );
 }
+
+let appStyle = {
+  backgroundColor: 'grey',
+  color: 'white',
+  width: '100%vh',
+  height: '100vh',
+  textAlign: 'center',
+  border: "none"
+}
+
 
 export default App;
