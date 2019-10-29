@@ -26,7 +26,8 @@ class SearchContainer extends Component{
   fetchComic = (comicUrl) => {
     fetch(comicUrl)
     .then(res => res.json())
-    .then(res => this.setState({result: res, recentComics: [...this.state.recentComics, res]}))
+    //when setting state, only add :title, :img, and :num for reference for recent comics
+    .then(res => this.setState({result: res, recentComics: [...this.state.recentComics, {title: res.title, num: res.num, img: res.img}]}))
 
   }
 
