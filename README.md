@@ -1,4 +1,15 @@
-# Support Engineer Challenge
+WELL HELLO THERE!
+
+Thank you so much for the opportunity to show you what I can do. I thoroughly enjoyed the challenge and look forward to doing more work for you! I'm a talker so I decided to make you a quick video run-through of my code in lieu of over-commenting my code. I've provided a youtube link to the unlisted video below. I hope that the video sparks more curiosity that you have some constructive feedback for me.
+
+Happy Watching!
+Rose
+
+YouTube Link - https://youtu.be/hR7TrWASETQ
+
+
+
+<!-- # Support Engineer Challenge
 
 Welcome! If you are reading this, it's likely because you want to work with us. If you have already applied, then continue on. If not, check out our [careers](https://newstorycharity.org/careers/) page to see our available openings. No software developer opening? Email us anyway!
 
@@ -16,7 +27,7 @@ Upon completion, a **public** Github URL should be sent to the following:
 
 ## The Challenge
 
-You'll be creating a React application that interacts with the XKCD API. 
+You'll be creating a React application that interacts with the XKCD API.
 
 If you've never heard of XKCD before, it's a fun web comic. You can check it out here - [XKCD Website](https://xkcd.com).
 
@@ -116,6 +127,4 @@ To help, here is a fully [working example](https://i.imgur.com/0dXELKX.gif).
 
 There is a lot of other data available in the API response, such as "year", "month", "num", etc. Feel free to take that data and show it somewhere on the page.
 
-This isn't required, but feel free to go beyond the requirements. 
-
-
+This isn't required, but feel free to go beyond the requirements.  -->
