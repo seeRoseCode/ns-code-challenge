@@ -19,7 +19,7 @@ class SearchContainer extends Component{
     this.handleError(searchInput)
     let XKCDURL = `https://xkcd.now.sh/?comic=${searchInput}`
     // XKCDURL += searchInput
-    this.fetchComic(XKCDURL, searchInput)
+    this.fetchComic(XKCDURL)
   }
 
   //fetch user's chosen comic and assign to state

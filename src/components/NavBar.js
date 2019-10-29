@@ -23,7 +23,6 @@ let navStyle = {
 let buttonStyle = {
   fontSize: "14px",
   padding: "20px"
-
 }
 
 export default NavBar;
