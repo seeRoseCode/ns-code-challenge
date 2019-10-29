@@ -1,9 +1,14 @@
 import React, { Component } from 'react'
 import SearchForm from '../SearchForm'
+import RecentSearches from '../RecentSearches'
+let XKCDURL = `https://xkcd.now.sh/?comic=`
+
+
 class SearchContainer extends Component{
 
   state = {
     result: {},
+    recentComics: []
   }
 
 
@@ -12,7 +17,8 @@ class SearchContainer extends Component{
     e.preventDefault()
     let searchInput = e.target.children[0].value
     this.handleError(searchInput)
-    let XKCDURL = `https://xkcd.now.sh/?comic=${searchInput}`
+    // let XKCDURL = `https://xkcd.now.sh/?comic=${searchInput}`
+    XKCDURL += searchInput
     this.fetchComic(XKCDURL)
   }
 
@@ -20,7 +26,7 @@ class SearchContainer extends Component{
   fetchComic = (comicUrl) => {
     fetch(comicUrl)
     .then(res => res.json())
-    .then(res => this.setState({result: res}))
+    .then(res => this.setState({result: res, recentComics: [...this.state.recentComics, {title: res.title, url: XKCDURL+= res.num}]}))
   }
 
   //ensures that user input is a number that corresponds to an actual comic
@@ -33,6 +39,14 @@ class SearchContainer extends Component{
       parseInt(num) !== NaN && n > 0 && n < 2219 ? true : alert("please enter a number 1-2219")
     )
   }
+
+  renderComic = (e, comic) => {
+    e.preventDefault()
+    // debugger
+    console.log("see ROSE code")
+    this.fetchComic(comic.url)
+  }
+
 
   render(){
 
@@ -54,6 +68,7 @@ class SearchContainer extends Component{
         {this.state.result ? <h1>{result.title}</h1> : null}
         {this.state.result ? <img className="searchImage" title={result.alt} alt={result.title} src={result.img}/> : null}
         {date.includes("undefined") ? null :  <h3>{date}</h3>}
+        <RecentSearches recentComics={this.state.recentComics} renderComic={this.renderComic}/>
       </div>
     )
   }
