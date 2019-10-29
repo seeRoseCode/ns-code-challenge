@@ -17,17 +17,19 @@ class SearchContainer extends Component{
     e.preventDefault()
     let searchInput = e.target.children[0].value
     this.handleError(searchInput)
-    // let XKCDURL = `https://xkcd.now.sh/?comic=${searchInput}`
-    XKCDURL += searchInput
-    this.fetchComic(XKCDURL)
+    let XKCDURL = `https://xkcd.now.sh/?comic=${searchInput}`
+    // XKCDURL += searchInput
+    this.fetchComic(XKCDURL, searchInput)
   }
 
   //fetch user's chosen comic and assign to state
   fetchComic = (comicUrl) => {
     fetch(comicUrl)
     .then(res => res.json())
-    .then(res => this.setState({result: res, recentComics: [...this.state.recentComics, {title: res.title, url: XKCDURL+= res.num}]}))
+    .then(res => this.setState({result: res, recentComics: [...this.state.recentComics, res]}))
+
   }
+
 
   //ensures that user input is a number that corresponds to an actual comic
   handleError = (num) => {
@@ -44,7 +46,7 @@ class SearchContainer extends Component{
     e.preventDefault()
     // debugger
     console.log("see ROSE code")
-    this.fetchComic(comic.url)
+    this.fetchComic(`https://xkcd.now.sh/?comic=${comic.num}`)
   }
 
 
